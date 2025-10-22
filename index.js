@@ -12,3 +12,20 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
+const db = mysql.createConnection({
+  host: 'localhost',
+    user: 'root',
+    password: 'Qilqil.123',
+    database: 'mahasiswa',
+    port: 3309
+});
+
+
+db.connect((err) => {
+  if (err) {
+    console.error('Error connecting to database:'+ err.stack);
+    return;
+  }
+    console.log('Connected successfully');
+});
